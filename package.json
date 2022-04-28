@@ -1,0 +1,27 @@
+{
+  "name": "vitedemo",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite serve --mode dev",
+    "prod": "vite serve --mode prod",
+    "build:dev": "vite build --mode dev",
+    "build:prod": "vite build --mode prod",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^1.1.4",
+    "axios": "^0.27.0",
+    "element-plus": "^2.1.11",
+    "gsap": "^3.10.4",
+    "url": "^0.11.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.3",
+    "vite": "^2.9.5"
+  }
+}

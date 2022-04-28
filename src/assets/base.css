@@ -1,0 +1,207 @@
+[v-cloak] {
+    display: none 
+}
+body{
+    margin: 0;
+}
+.header {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    background: rgba(0,0,0,.65);
+    color: #fff;
+    margin: 0;
+    padding: .8em 0 .8em .5rem;
+}
+.el-menu--horizontal>.el-menu-item {
+    font-size: 1rem ;
+    border-bottom: .125rem solid #EAECEE;
+}
+.header-tab {
+    justify-content: center;
+    border-bottom: none;
+}
+.content-box {
+    margin: 8rem auto 0;
+}
+.diary-content-box {
+    margin: 4rem auto 0;
+}
+.content {
+    padding: .5rem;
+    font-size: 18px;
+    min-height: 10rem;
+}
+.content .text {
+    min-height: 8rem;
+    line-height: 24px;
+}
+.diary-content {
+    padding: .5rem;
+    font-size: 18px;
+    min-height: 15rem;
+}
+.diary-content .diary-text {
+    min-height: 13rem;
+}
+.buttons {
+    padding-top: 1.5rem;
+    text-align: center;
+}
+.is-disabled span {
+    filter:blur(2px);
+    -webkit-filter:blur(2px);
+    -moz-filter:blur(2px);
+    -ms-filter:blur(2px);
+    -o-filter:blur(2px);
+}
+.textBlur{
+    filter:blur(2px);
+    -webkit-filter:blur(2px);
+    -moz-filter:blur(2px);
+    -ms-filter:blur(2px);
+    -o-filter:blur(2px);
+}
+.lickCount {
+    font-size: 12px;
+    padding-top: 2rem;
+    text-align: right;
+}
+.footer {
+    margin-top: 7rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.footer-link{
+    margin: 0 15px;
+}
+.footer-text {
+    line-height: 30px;
+    color: #808B96;
+    font-size: 14px;
+}
+.admin-container {
+    margin: 0 auto;
+    width: 100%;
+}
+.admin-header {
+    color: #fff;
+    width: 100%;
+    height: 5rem;
+    font-size: 1.875rem;
+    text-align: center;
+    line-height: 5rem;
+    background: rgba(0,0,0,.65);
+}
+.admin-login{
+    padding-top: 3.125rem;
+    margin: 0 auto;
+    width: 25rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 1rem;
+    }
+    .content-box {
+        margin: 1rem auto 0;
+    }
+    .diary-content-box {
+        margin: 1rem auto 0;
+    }
+    .diary-content {
+        padding: 0;
+        font-size: 16px;
+    }
+    .content {
+        padding: 0;
+        font-size: 16px;
+    }
+    .content .text {
+        line-height: 24px;
+    }
+    .diary-content .diary-text {
+        line-height: 22px;
+    }
+    .tip_dialog{
+        width: 95% !important;
+    }
+    .send_dialog{
+        width: 95% !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+    .header {
+        font-size: 2rem;
+    }
+    .content-box {
+        margin: 2rem auto 0;
+    }
+    .diary-content-box {
+        margin: 2rem auto 0;
+    }
+    .diary-content {
+        padding: 0;
+        font-size: 18px;
+    }
+    .content {
+        padding: 0;
+        font-size: 18px;
+    }
+    .content .text {
+        line-height: 26px;
+    }
+    .diary-content .diary-text {
+        line-height: 24px;
+    }
+    .tip_dialog{
+        width: 60% !important;
+    }
+    .send_dialog{
+        width: 70% !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    .header {
+        font-size: 2.5rem;
+    }
+    .content-box {
+        margin: 2.5rem auto 0;
+    }
+    .diary-content-box {
+        margin: 2.5rem auto 0;
+    }
+    .diary-content {
+        padding: 0;
+        font-size: 20px;
+    }
+    .content {
+        padding: 0;
+        font-size: 20px;
+    }
+    .content .text {
+        line-height: 28px;
+    }
+    .diary-content .diary-text {
+        line-height: 26px;
+    }
+    .tip_dialog{
+        width: 50% !important;
+    }
+    .send_dialog{
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .tip_dialog{
+        width: 30% !important;
+    }
+    .send_dialog{
+        width: 50% !important;
+    }
+}
