@@ -3,9 +3,13 @@
         <div class="footer">
             <div style="line-height:30px;">
                 <el-button type="text" class="footer-link" @click="apiDialog = true">API</el-button>
-                <el-link type="primary" class="footer-link" :underline="false" href="https://github.com/Dieinwarm/dogartvue" target="_blank" title="暗示要一个 Star" >
-                    Github&nbsp;<el-icon><star /></el-icon>
-                </el-link>
+                <el-popover placement="top-start" title="你懂的，嘿嘿" :width="200" trigger="hover" content="暗示一个 Star" >
+                    <template #reference>
+                        <el-link type="primary" class="footer-link" :underline="false" href="https://github.com/Dieinwarm/dogvite" target="_blank" >
+                            Github&nbsp;<el-icon><star /></el-icon>
+                        </el-link>
+                    </template>
+                </el-popover>
                 <el-button type="text" class="footer-link" @click="aboutDialog = true">关于</el-button>
                 <el-button type="text" class="footer-link" @click="updateDialog = true">更新日志</el-button>
             </div>
