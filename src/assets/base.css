@@ -1,21 +1,21 @@
 [v-cloak] {
-    display: none 
+    display: none;
 }
-body{
+body {
     margin: 0;
 }
 .header {
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: -1px;
-    background: rgba(0,0,0,.65);
+    background: rgba(0, 0, 0, 0.65);
     color: #fff;
     margin: 0;
-    padding: .8em 0 .8em .5rem;
+    padding: 0.8em 0 0.8em 0.5rem;
 }
-.el-menu--horizontal>.el-menu-item {
-    font-size: 1rem ;
-    border-bottom: .125rem solid #EAECEE;
+.el-menu--horizontal > .el-menu-item {
+    font-size: 1rem;
+    border-bottom: 0.125rem solid #eaecee;
 }
 .header-tab {
     justify-content: center;
@@ -28,7 +28,7 @@ body{
     margin: 4rem auto 0;
 }
 .content {
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 18px;
     min-height: 10rem;
 }
@@ -37,7 +37,7 @@ body{
     line-height: 24px;
 }
 .diary-content {
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 18px;
     min-height: 15rem;
 }
@@ -49,18 +49,18 @@ body{
     text-align: center;
 }
 .is-disabled span {
-    filter:blur(2px);
-    -webkit-filter:blur(2px);
-    -moz-filter:blur(2px);
-    -ms-filter:blur(2px);
-    -o-filter:blur(2px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
 }
-.textBlur{
-    filter:blur(2px);
-    -webkit-filter:blur(2px);
-    -moz-filter:blur(2px);
-    -ms-filter:blur(2px);
-    -o-filter:blur(2px);
+.textBlur {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -ms-filter: blur(2px);
+    -o-filter: blur(2px);
 }
 .lickCount {
     font-size: 12px;
@@ -73,12 +73,12 @@ body{
     width: 100%;
     margin-bottom: 1.5rem;
 }
-.footer-link{
+.footer-link {
     margin: 0 15px;
 }
 .footer-text {
     line-height: 30px;
-    color: #808B96;
+    color: #808b96;
     font-size: 14px;
 }
 .admin-container {
@@ -92,14 +92,28 @@ body{
     font-size: 1.875rem;
     text-align: center;
     line-height: 5rem;
-    background: rgba(0,0,0,.65);
+    background: rgba(0, 0, 0, 0.65);
 }
-.admin-login{
+.admin-login {
     padding-top: 3.125rem;
     margin: 0 auto;
     width: 25rem;
 }
 
+.el-dialog {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100% - 100px);
+}
+.el-dialog .el-dialog__body {
+    flex: 1;
+    overflow: auto;
+}
 
 @media screen and (max-width: 768px) {
     .header {
@@ -125,15 +139,15 @@ body{
     .diary-content .diary-text {
         line-height: 22px;
     }
-    .tip_dialog{
+    .tip_dialog {
         width: 95% !important;
     }
-    .send_dialog{
+    .send_dialog {
         width: 95% !important;
     }
 }
 
-@media screen and (min-width: 768px) and (max-width:992px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
     .header {
         font-size: 2rem;
     }
@@ -157,15 +171,15 @@ body{
     .diary-content .diary-text {
         line-height: 24px;
     }
-    .tip_dialog{
+    .tip_dialog {
         width: 60% !important;
     }
-    .send_dialog{
+    .send_dialog {
         width: 70% !important;
     }
 }
 
-@media screen and (min-width: 992px) and (max-width:1200px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
     .header {
         font-size: 2.5rem;
     }
@@ -189,19 +203,19 @@ body{
     .diary-content .diary-text {
         line-height: 26px;
     }
-    .tip_dialog{
+    .tip_dialog {
         width: 50% !important;
     }
-    .send_dialog{
+    .send_dialog {
         width: 50% !important;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .tip_dialog{
+    .tip_dialog {
         width: 30% !important;
     }
-    .send_dialog{
+    .send_dialog {
         width: 50% !important;
     }
 }
