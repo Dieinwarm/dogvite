@@ -4,13 +4,12 @@
             <el-card class="box-card">
                 <div class="content" v-cloak>
                     <div class="text">{{ content }}</div>
-                    <div class="lickCount">👅x {{ animatedNumber }}</div>
                 </div>
             </el-card>
         </div>
         <div class="buttons">
-            <el-button type="primary" size="default" @click="getWords" round>再来一条</el-button>
-            <el-button size="default" @click="lick" round :disabled="clickLick">👅</el-button>
+            <el-button type="primary" size="default" @click="getWords" round :disabled="clickMore">再来一条</el-button>
+            <el-button size="default" @click="lick" round :disabled="clickLick">👅 <span class="lickCount">&nbsp;×{{ animatedNumber }}</span></el-button>
             <el-button type="success" size="default" @click="sendWordDialog = true" round>投稿</el-button>
         </div>
         <el-dialog title="投稿 舔狗の语" v-model="sendWordDialog" custom-class="send_dialog">
@@ -43,6 +42,7 @@
     const content = ref("");
     const lickCount = ref(0);
     const tweenedNumber = ref(0);
+    const clickMore = ref(false);
     const clickLick = ref(false);
     const sendWordDialog = ref(false);
     const wordsForms = ref();
@@ -55,13 +55,17 @@
             { min: 8, max: 140, message: '你的投稿字符长度达不到合格的舔狗标准(8-140字)', trigger: 'blur' }
         ]
     })
-
+    
     const getWords = () => {
         wordsGet().then(res => {
             wordid.value = res.id;
             content.value = res.content;
             lickCount.value = res.lickCount;
             clickLick.value = res.lickDisable;
+            clickMore.value = true; 
+            setTimeout(function (){
+                clickMore.value = false;
+            },800);
         })
     };
     const lick = () => {

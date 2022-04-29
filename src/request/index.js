@@ -16,7 +16,6 @@ let requestCount = 0;
 const showLoading = () => {
     if (requestCount === 0 && !loading) {
         loading = ElLoading.service({
-            text: 'loading ...',
             background: 'rgba(255,255,255,0.6)',
             lock: true
         });
