@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+采用 element-Plus 2.x 版本，打包工具从 vue-cli 更换为 vite ，优化项目结构，去掉冗余代码
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+重新整合 axios 实现请求前后拦截器，有利于后面开发后台管理的验证
 
-## Recommended IDE Setup
+采用 element-Plus 的按需自动加载，不再手动引包
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+更换成 ve3 的 <script setup> 语法糖用法，不用去写 setup() 函数和 return 一堆属性了
