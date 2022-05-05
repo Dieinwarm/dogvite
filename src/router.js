@@ -1,20 +1,19 @@
 import { createRouter,createWebHashHistory } from 'vue-router';
 import Index from './components/Index.vue'
-import Words from './components/view/Words.vue'
-import Diary from './components/view/Diary.vue'
-import Admin from './components/view/admin/Admin.vue'
-import Login from './components/view/admin/Login.vue'
+import Words from '@view/Words.vue'
+import Diary from '@view/Diary.vue'
+import AdminIndex from '@view/admin/Index.vue'
+import Admin from '@view/admin/Admin.vue'
+import Login from '@view/admin/Login.vue'
 
 const routes = [
     {
         path: '/',
-        name: 'index',
         component: Index,
         redirect: "/words",
         children:[
             {
                 path: '/words',
-                name: 'words',
                 component: Words,
                 meta: {
                   title: '舔狗の语'
@@ -22,7 +21,6 @@ const routes = [
             },
             {
                 path: '/diary',
-                name: 'diary',
                 component: Diary,
                 meta: {
                   title: '舔狗日记'
@@ -32,7 +30,13 @@ const routes = [
     },
     {
         path: '/admin',
-        name: 'admin',
+        component: AdminIndex,
+        meta: {
+          title: '后台管理'
+        }
+    },
+    {
+        path: '/admin/list',
         component: Admin,
         meta: {
           title: '内容管理'
@@ -40,7 +44,6 @@ const routes = [
     },
     {
         path: '/login',
-        name: 'login',
         component: Login,
         meta: {
           title: '登录'

@@ -21,7 +21,9 @@ export default defineConfig({
         // 配置路径别名
         alias: {
             "@": path.resolve(__dirname, "./src"),
+            "@view": path.resolve(__dirname, "./src/components/view"),
             "@api": path.resolve(__dirname, "./src/request/apis"),
+            "@adminApi": path.resolve(__dirname, "./src/request/adminApis"),
         },
     },
     //分包打包，防止单体文件太大

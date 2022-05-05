@@ -25,50 +25,37 @@
         </div>
     </div>
 </template>
-<script>
-import { getCurrentInstance, reactive, ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { ElMessage } from 'element-plus';
+<script setup>
+    import { reactive, ref } from 'vue';
+    import { useRouter } from 'vue-router';
+    import { ElMessage } from 'element-plus';
+    import { Login } from '@adminApi/homeApi';
 
-export default {
-    setup(){
-        const ctx = getCurrentInstance()?.appContext.config.globalProperties;
-        const axios = ctx.$axios;
-        const router = useRouter();
-        const form = ref();
-        const forms = reactive({
-            name: "",
-            password: ""
-        });
-        const rules = {
-            name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-            password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
-        }
-
-        const onLogin = () => {
-            form.value.validate((valid) => {
-                if(valid){
-                    axios.post("/login",forms).then(res => {
-                        if(res.data){
-                            router.push("/admin");
-                        }else{
-                            ElMessage.error("账号密码错误");
-                        }
-                    }).catch(err => {
-                        console.log(err);
-                    });
-                }else{
-                    return false;
-                }
-            });
-        }
-
-        return{
-            form,
-            forms,
-            rules,
-            onLogin
-        }
+    const router = useRouter();
+    const form = ref();
+    const forms = reactive({
+        name: "",
+        password: ""
+    });
+    const rules = {
+        name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
     }
-};
+
+    const onLogin = () => {
+        form.value.validate((valid) => {
+            if(valid){
+                Login(forms).then(res => {
+                    if(res){
+                        router.push("/admin");
+                    }else{
+                        ElMessage.error("账号密码错误");
+                    }
+                })
+            }else{
+                return false;
+            }
+        });
+    }
+
 </script>

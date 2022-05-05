@@ -17,45 +17,23 @@
                     </el-table-column>
                 </el-table>
             </div>
-            <!-- 底部 -->
-            <div>
-                
-            </div>
         </div>
     </div>
 </template>
-<script>
-import { onMounted, ref, getCurrentInstance} from 'vue';
-import { useRouter } from 'vue-router';
+<script setup>
+    import { onMounted, ref } from 'vue';
+    import { wordsList } from '@adminApi/homeApi';
+    const tableData = ref();
 
-export default {
-    setup(){
-        const ctx = getCurrentInstance()?.appContext.config.globalProperties;
-        const axios = ctx.$axios;
-        const router = useRouter();
-        const tableData = ref();
-
-        const getWords = () =>{
-            axios.post("/admin/getWords",{
-                type: 1
-            }).then(res => {
-                if(res.data.code == -1){
-                    router.push("/login");
-                }else{
-                    tableData.value = res.data;
-                }
-            }).catch(err => {
-                console.log(err);
-            })
-        }
-
-        onMounted(() => {
-            getWords();
+    const getWords = () =>{
+        wordsList({
+            type: 1
+        }).then(res => {
+            tableData.value = res;
         })
-
-        return {
-            tableData
-        }
     }
-}
+
+    onMounted(() => {
+        getWords();
+    })
 </script>
