@@ -11,6 +11,8 @@
         validLogin().then(res => {
             if(res){
                 router.push("/admin/list");
+            }else{
+                router.push("/login");
             }
         })
     }
