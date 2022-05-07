@@ -15,10 +15,9 @@ let loading;
 let requestCount = 0;
 //显示loading
 const showLoading = () => {
-    if (requestCount === 0 && !loading) {
+    if (requestCount === 0) {
         loading = ElLoading.service({
-            background: 'rgba(255,255,255,0)',
-            lock: true
+            background: 'rgba(255,255,255,0)'
         });
     }
     requestCount++;

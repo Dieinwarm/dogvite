@@ -106,6 +106,10 @@ body {
     flex: 1;
     overflow: auto;
 }
+.el-button--primary {
+    --el-button-hover-bg-color: var(--el-color-primary);
+    --el-button-hover-border-color: var(--el-color-primary);
+}
 
 @media screen and (max-width: 768px) {
     .header {
