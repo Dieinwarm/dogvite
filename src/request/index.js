@@ -17,7 +17,8 @@ let requestCount = 0;
 const showLoading = () => {
     if (requestCount === 0) {
         loading = ElLoading.service({
-            background: 'rgba(255,255,255,0)'
+            background: 'rgba(255,255,255,0)',
+            fullscreen: false
         });
     }
     requestCount++;

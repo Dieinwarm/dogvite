@@ -27,7 +27,8 @@
             <p>你是谁：大家好，我是<span class="textBlur" style="margin-right:10px;">傻逼</span>  Nobody cares.</p>
             <hr />
             <h3>Donate:</h3>
-            <p>如果你认为这个网站对你有所帮助或者其他什么奇奇怪怪的理由，你可以用你的大手机扫一扫下面的神秘二维码，<del>你的赞赏将会用于服务器的购买和维护</del> 
+            <p>如果你认为这个网站对你有所帮助或者其他什么奇奇怪怪的理由，你可以用你的大手机扫一扫下面的神秘二维码，
+            <del><span style="color:#ABB2B9;">你的赞赏将会用于服务器的购买和维护</span></del> 
             你就可以请我喝一杯咖啡。你可以在赞赏留言中留下姓名或称呼，我将不定期更新 <el-link type="primary" @click="donateDialog = true">赞赏名单</el-link></p>
             <div style="text-align: center;"><img src="@/assets/img/wechat.jpg" style="width:60%;" /></div>
             <el-dialog v-model="donateDialog" title="赞赏名单" custom-class="tip_dialog" append-to-body>
