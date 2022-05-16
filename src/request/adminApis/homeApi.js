@@ -38,3 +38,15 @@ export const wordsList = (data) => {
         }
     })
 }
+
+//修改审核状态
+export const changeState = (data) => {
+    return axios({
+        url: "/admin/changeState",
+        method: "post",
+        data: data,
+        config: {
+            timeout: 10000
+        }
+    })
+}

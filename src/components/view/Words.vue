@@ -9,7 +9,7 @@
         </div>
         <div class="buttons">
             <el-button type="primary" size="default" @click="getWords" round :disabled="clickMore">再来一条</el-button>
-            <el-button size="default" @click="lick" round :disabled="clickLick">👅 <span class="lickCount">&nbsp;×{{ animatedNumber }}</span></el-button>
+            <el-button size="default" @click="lick" round :disabled="clickLick"><img src="@/assets/lick.gif" style="height: 22px;" /> <span class="lickCount">&nbsp;×{{ animatedNumber }}</span></el-button>
             <el-button type="success" size="default" @click="sendWordDialog = true" round>投稿</el-button>
         </div>
         <el-dialog title="投稿 舔狗の语" v-model="sendWordDialog" custom-class="send_dialog">

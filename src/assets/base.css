@@ -73,14 +73,8 @@ body {
     color: #808b96;
     font-size: 14px;
 }
-.admin-container {
-    margin: 0 auto;
-    width: 100%;
-}
 .admin-header {
     color: #fff;
-    width: 100%;
-    height: 5rem;
     font-size: 1.875rem;
     text-align: center;
     line-height: 5rem;

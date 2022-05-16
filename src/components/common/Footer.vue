@@ -2,14 +2,14 @@
     <div>
         <div class="footer">
             <div style="line-height:30px;">
-                <el-button type="text" class="footer-link" @click="apiDialog = true">API</el-button>
+                <el-link type="primary" class="footer-link" @click="apiDialog = true" :underline="false">API</el-link>
                 <el-tooltip content="暗示 Star" placement="top" effect="light">
                     <el-link type="primary" class="footer-link" :underline="false" href="https://github.com/Dieinwarm/dogvite" target="_blank" >
                         Github&nbsp;<el-icon><star /></el-icon>
                     </el-link>
                 </el-tooltip>
-                <el-button type="text" class="footer-link" @click="aboutDialog = true">关于</el-button>
-                <el-button type="text" class="footer-link" @click="updateDialog = true">更新日志</el-button>
+                <el-link type="primary" class="footer-link" @click="aboutDialog = true" :underline="false">关于</el-link>
+                <el-link type="primary" class="footer-link" @click="updateDialog = true" :underline="false">更新日志</el-link>
             </div>
             <div class="footer-text">-</div>
             <div class="footer-text" style="color: transparent;">I feeling like I'm falling.</div>
@@ -67,7 +67,6 @@
 
 <script setup>
 	import { ref } from 'vue';
-    import { MoreFilled } from '@element-plus/icons-vue'
 
     const apiDialog = ref(false);
     const aboutDialog = ref(false);
