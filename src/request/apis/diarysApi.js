@@ -11,12 +11,12 @@ export const diarysGet = (data) => {
         }
     })
 }
-//post
-export const mokePost = (data) => {
+//日记投稿
+export const addDiary = (data) => {
     return axios({
-        url: "/api/xxxx",
+        url: "/addDiary",
         method: "post",
-        data,
+        data: data,
         config: {
             headers: {
                 'Request-Type': 'wechat'

@@ -74,6 +74,12 @@
     const donateDialog = ref(false);
     const activities = [
         {
+            content: '曹小过 ￥2',
+            timestamp: '2022-05-18 13:24',
+            type: 'primary',
+            hollow: true
+        },
+        {
             content: 'Jc ￥5',
             timestamp: '2022-04-29 16:11',
             type: 'primary',
