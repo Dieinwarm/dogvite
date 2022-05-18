@@ -104,6 +104,12 @@ body {
     --el-button-hover-bg-color: var(--el-color-primary);
     --el-button-hover-border-color: var(--el-color-primary);
 }
+.el-button.is-disabled, .el-button.is-disabled:focus, .el-button.is-disabled:hover {
+    -webkit-filter: grayscale(45%);
+    -moz-filter: grayscale(45%);
+    -ms-filter: grayscale(45%);
+    -o-filter: grayscale(45%);
+}
 
 @media screen and (max-width: 768px) {
     .header {
