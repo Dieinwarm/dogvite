@@ -11,7 +11,7 @@
                 <el-link type="primary" class="footer-link" @click="aboutDialog = true" :underline="false">关于</el-link>
                 <el-link type="primary" class="footer-link" @click="updateDialog = true" :underline="false">更新日志</el-link>
             </div>
-            <div class="footer-text">💌</div>
+            <div class="footer-text">Build with 💻 by Dieinwarm</div>
             <div class="footer-text" style="color: transparent;">World is powered by solitude.</div>
         </div>
         <el-dialog title="API" v-model="apiDialog" custom-class="tip_dialog">

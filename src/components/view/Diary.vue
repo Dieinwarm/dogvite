@@ -20,6 +20,7 @@
 <script setup>
     import { onMounted, ref } from 'vue'
     import { diarysGet } from '@api/diarysApi'
+    import { ElMessage } from 'element-plus';
     import axios from 'axios'
     const citystr = ref("");
     const content = ref("");
@@ -71,7 +72,7 @@
         })
     }
     const addDiary = () => {
-
+        ElMessage.error('Not finished, coming soon ~');
     }
 
     onMounted(() =>{
