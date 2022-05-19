@@ -88,6 +88,13 @@ body {
 .admin-menu {
     height: 100%;
 }
+.badge{
+    font-size: 12px;
+    background-color: #f56c6c;
+    padding: 0 5px;
+    color: #fff;
+    border-radius: 10px;
+}
 
 .el-dialog {
     display: flex;

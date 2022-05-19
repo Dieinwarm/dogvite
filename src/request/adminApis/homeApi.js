@@ -74,3 +74,15 @@ export const changeDiaryState = (data) => {
         }
     })
 }
+
+//获取未审核数量
+export const noPassCount = (data) => {
+    return axios({
+        url: "/admin/getCount",
+        method: "get",
+        data,
+        config: {
+            timeout: 10000
+        }
+    })
+}

@@ -9,11 +9,11 @@
                     <el-menu :default-active="$route.path" router class="admin-menu" >
                         <el-menu-item index="/admin/words">
                             <el-icon><Lollipop /></el-icon>
-                            <span>舔狗の语</span>
+                            <span>舔狗の语 <span class="badge">{{ wordsCount }}</span></span>
                         </el-menu-item>
                         <el-menu-item index="/admin/diary">
                             <el-icon><document /></el-icon>
-                            <span>舔狗日记</span>
+                            <span>舔狗日记 <span class="badge">{{ diaryCount }}</span></span>
                         </el-menu-item>
                     </el-menu>
                 </el-aside>
@@ -28,10 +28,12 @@
 </template>
 
 <script setup>
-    import { onMounted } from 'vue';
+    import { onMounted, ref } from 'vue';
     import { useRouter } from 'vue-router';
-    import { validLogin } from '@adminApi/homeApi';
+    import { validLogin, noPassCount } from '@adminApi/homeApi';
 
+    const wordsCount = ref(0);
+    const diaryCount = ref(0);
     const router = useRouter();
     const vLogin = () => {
         validLogin().then(res => {
@@ -41,7 +43,15 @@
         })
     }
 
+    const count = () => {
+        noPassCount().then(res => {
+            wordsCount.value = res.wordsCount;
+            diaryCount.value = res.diaryCount;
+        })
+    }
+
     onMounted(() => {
         vLogin();
+        count();
     })
 </script>
