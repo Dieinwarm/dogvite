@@ -85,6 +85,9 @@ body {
     margin: 0 auto;
     width: 25rem;
 }
+.admin-menu {
+    height: 100%;
+}
 
 .el-dialog {
     display: flex;

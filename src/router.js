@@ -1,26 +1,27 @@
 import { createRouter,createWebHashHistory } from 'vue-router';
-import Index from './components/Index.vue'
-import Words from '@view/Words.vue'
-import Diary from '@view/Diary.vue'
-import AdminIndex from '@view/admin/Index.vue'
-import Admin from '@view/admin/Admin.vue'
-import Login from '@view/admin/Login.vue'
+import Index from './components/Index'
+import Words from '@view/Words'
+import Diary from '@view/Diary'
+import Admin from '@view/admin/Admin'
+import WordsList from '@view/admin/WordsList'
+import DiaryList from '@view/admin/DiaryList'
+import Login from '@view/admin/Login'
 
 const routes = [
     {
         path: '/',
         component: Index,
-        redirect: "/words",
+        redirect: "words",
         children:[
             {
-                path: '/words',
+                path: 'words',
                 component: Words,
                 meta: {
                   title: '舔狗の语'
                 }
             },
             {
-                path: '/diary',
+                path: 'diary',
                 component: Diary,
                 meta: {
                   title: '舔狗日记'
@@ -30,17 +31,27 @@ const routes = [
     },
     {
         path: '/admin',
-        component: AdminIndex,
+        component: Admin,
+        redirect: "/admin/words",
         meta: {
           title: '后台管理'
-        }
-    },
-    {
-        path: '/admin/list',
-        component: Admin,
-        meta: {
-          title: '内容管理'
-        }
+        },
+        children:[
+            {
+                path: 'words',
+                component: WordsList,
+                meta: {
+                  title: '舔狗の语 - 后台管理'
+                }
+            },
+            {
+                path: 'diary',
+                component: DiaryList,
+                meta: {
+                  title: '舔狗日记 - 后台管理'
+                }
+            }
+        ]
     },
     {
         path: '/login',

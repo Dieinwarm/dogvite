@@ -39,10 +39,34 @@ export const wordsList = (data) => {
     })
 }
 
-//修改审核状态
-export const changeState = (data) => {
+//获取日记
+export const diaryList = (data) => {
     return axios({
-        url: "/admin/changeState",
+        url: "/admin/getDiarys",
+        method: "get",
+        data,
+        config: {
+            timeout: 10000
+        }
+    })
+}
+
+//修改语录审核状态
+export const changeWordsState = (data) => {
+    return axios({
+        url: "/admin/changeWordsState",
+        method: "post",
+        data: data,
+        config: {
+            timeout: 10000
+        }
+    })
+}
+
+//修改日记审核状态
+export const changeDiaryState = (data) => {
+    return axios({
+        url: "/admin/changeDiaryState",
         method: "post",
         data: data,
         config: {

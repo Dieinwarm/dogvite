@@ -1,56 +1,47 @@
 <template>
     <div class="common-layout">
         <el-container>
-            <el-header>
+            <el-header height="5rem" style="padding:0px;">
                 <div class="admin-header">舔狗的艺术 - 内容管理</div>
             </el-header>
-            <el-main>
-                <el-table :data="tableData" border stripe :table-layout="tableLayout">
-                    <el-table-column prop="createdate" label="日期" width="180"></el-table-column>
-                    <el-table-column prop="content" label="内容"></el-table-column>
-                    <el-table-column prop="ipaddress" label="IP地址" width="140"></el-table-column>
-                    <el-table-column label="审核" fixed="right" width="150">
-                        <template #default="scope">
-                            <el-button @click="passVerification(scope.row.id, 'yes')" type="success" size="small">通过</el-button>
-                            <el-button @click="passVerification(scope.row.id, 'no')" type="danger" size="small">拒绝</el-button>
-                        </template>
-                    </el-table-column>
-                </el-table>
-            </el-main>
+            <el-container>
+                <el-aside width="200px">
+                    <el-menu :default-active="$route.path" router class="admin-menu" >
+                        <el-menu-item index="/admin/words">
+                            <el-icon><Lollipop /></el-icon>
+                            <span>舔狗の语</span>
+                        </el-menu-item>
+                        <el-menu-item index="/admin/diary">
+                            <el-icon><document /></el-icon>
+                            <span>舔狗日记</span>
+                        </el-menu-item>
+                    </el-menu>
+                </el-aside>
+                <el-container>
+                    <el-main>
+                        <router-view></router-view>
+                    </el-main>
+                </el-container>
+            </el-container>
         </el-container>
     </div>
 </template>
 
 <script setup>
-    import { onMounted, ref } from 'vue';
-    import { wordsList, changeState } from '@adminApi/homeApi';
-    import { ElMessage, ElSelect } from 'element-plus';
-    const tableData = ref();
-    const tableLayout = ref('fixed');
+    import { onMounted } from 'vue';
+    import { useRouter } from 'vue-router';
+    import { validLogin } from '@adminApi/homeApi';
 
-    const getWords = () => {
-        wordsList({
-            type: 1
-        }).then(res => {
-            tableData.value = res;
-        })
-    }
-
-    const passVerification = (id, type) => {
-        changeState({
-            id: id,
-            type: type
-        }).then(res => {
-            if(res == "success"){
-                ElMessage.success('操作成功');
-                getWords();
-            }else{
-                ElMessage.error("操作失败");
+    const router = useRouter();
+    const vLogin = () => {
+        validLogin().then(res => {
+            if(!res){
+                router.push("/login");
             }
         })
     }
 
     onMounted(() => {
-        getWords();
+        vLogin();
     })
 </script>
