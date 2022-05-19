@@ -26,7 +26,7 @@
     </div>
 </template>
 <script setup>
-    import { reactive, ref } from 'vue';
+    import { onMounted, reactive, ref } from 'vue';
     import { useRouter } from 'vue-router';
     import { ElMessage } from 'element-plus';
     import { Login } from '@adminApi/homeApi';
@@ -57,5 +57,14 @@
             }
         });
     }
+
+    onMounted(() => {
+        document.onkeydown = (e) => {
+            e = window.event || e
+            if (e.keyCode === 13){
+                onLogin()
+            }
+        }
+    })
 
 </script>
